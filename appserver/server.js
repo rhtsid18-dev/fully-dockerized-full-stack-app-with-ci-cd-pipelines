@@ -2,17 +2,15 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-app.get('/api-one', (req, res) => {
-	res.json({ responseMessage: 'Api one called!', responseCode: 200 });
-});
+const apiOneHandler = require('./controllers/api-one');
+const apiTwoHandler = require('./controllers/api-two');
+const apiThreeHandler = require('./controllers/api-three');
 
-app.get('/api-two', (req, res) => {
-	res.json({ responseMessage: 'Api two called!', responseCode: 200 });
-});
+app.get('/api-one', apiOneHandler);
 
-app.get('/api-three', (req, res) => {
-	res.json({ responseMessage: 'Api three called!', responseCode: 200 });
-});
+app.get('/api-two', apiTwoHandler);
+
+app.get('/api-three', apiThreeHandler);
 
 app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`);
