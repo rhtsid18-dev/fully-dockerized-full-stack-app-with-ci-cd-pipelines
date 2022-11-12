@@ -1,2 +1,3 @@
 appserver/node_modules
+appserver/coverage
 frontend/node_modules
