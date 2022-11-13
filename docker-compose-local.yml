@@ -12,6 +12,17 @@ services:
         restart: unless-stopped
         networks:
             - app-network
+    frontend:
+        build:
+            context: ./frontend
+            dockerfile: DockerfileLocal
+        ports:
+            - "3000:3000"
+        image: frontend
+        container_name: frontend
+        restart: unless-stopped
+        networks:
+            - app-network
 networks:
     app-network:
         driver: bridge
