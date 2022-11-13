@@ -5,7 +5,7 @@
 	"main": "server.js",
 	"scripts": {
 		"test": "./node_modules/.bin/jest --coverage",
-		"start": "nodemon"
+		"start": "./node_modules/.bin/nodemon"
 	},
 	"author": "Rohit Sidhwani",
 	"license": "MIT",
